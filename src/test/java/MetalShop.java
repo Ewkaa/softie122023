@@ -20,7 +20,6 @@ public class MetalShop {
     public static void setUp(){
         driver.manage().window().maximize();
         driver.get("http://serwer169007.lh.pl/autoinstalator/serwer169007.lh.pl/wordpress10772/");
-        //TODO: test
     }
 
     @AfterAll
