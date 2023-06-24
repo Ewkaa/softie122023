@@ -15,16 +15,26 @@ public class MetalShop {
 
     String password = "test123";
     String username = "test12";
-    static WebDriver driver = new ChromeDriver();
+    static WebDriver driver;
+
     @BeforeAll
     public static void setUp(){
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         driver.get("http://serwer169007.lh.pl/autoinstalator/serwer169007.lh.pl/wordpress10772/");
     }
 
     @AfterAll
     public static void closeBrowser(){
         driver.quit();
+    }
+
+    @Test
+    public void fakerTest(){
+        Faker faker = new Faker();
+        System.out.println(faker.name());
+        System.out.println(faker.funnyName() + "@gmail.com");
     }
 
     @BeforeEach
